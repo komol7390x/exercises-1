@@ -1,4 +1,5 @@
-function countCharacterFrequency(str) {
+function countCharacterFrequency(str="") {
+    str=str.toLowerCase()
     let vowels1 = "auioe"
     let consonants1 = "qwrtypsdfghjklzxcvbnm"
     let number1 = "1234567890"
@@ -18,5 +19,5 @@ function countCharacterFrequency(str) {
     }
     return obj
 }
-console.log(countCharacterFrequency("hello world 123"));
+console.log(countCharacterFrequency("Hello world 123"));
 console.log(countCharacterFrequency("a1b2c3d4"));

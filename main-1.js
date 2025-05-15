@@ -31,7 +31,7 @@ function getMonthsNeededToWait(index1, index2) {
         return 12 - (index1 - index2)
     }
 }
-console.log(getMonthsNeededToWait(11, 0));
+// console.log(getMonthsNeededToWait(11, 0));
 
 // -------------------------------------------------------------------------
 // 6
@@ -42,11 +42,11 @@ function getGasolineAmount(distance, consumptionPer100Km) {
 
 function lastNRevert(text, n) {
     let arr = [];
-    for (let i = 0; i<n; i++) {
+    for (let i = 0; i < n; i++) {
         console.log;
         arr.push(text[(text.length - 1) - i])
     }
-    arr=arr.join("")
+    arr = arr.join("")
     return arr
 }
 // console.log(lastNRevert("Salom Dunyo", 3));
@@ -71,7 +71,7 @@ function getUserObject(firstName, lastName, age) {
         name: `${firstName} ${lastName}`
     }
 }
-console.log(getUserObject("Komol", "Parpixodjayev", 27));
+// console.log(getUserObject("Komol", "Parpixodjayev", 27));
 // -------------------------------------------------------------------------
 
 // 9
@@ -92,5 +92,40 @@ function areAllNumbersEven(numbers) {
     }
     return true
 }
+// -------------------------------------------------------------------------
+
+// 11
+
+function getBiggestNumberInArrays(numbers1, numbers2) {
+    let first = Math.max(...numbers1);
+    let second = Math.max(...numbers2)
+    if (first > second) {
+        return first
+    } else {
+        return second
+    }
+}
+// console.log(getBiggestNumberInArrays([1,2,3,4,5],[7,8,9]));
+
+// -------------------------------------------------------------------------
+// 12
+
+function getLongestString(arrayOfStrings) {
+    if (arrayOfStrings.length == 0) {
+        return []
+    }
+    let index
+    let max = arrayOfStrings[0].toString().length
+    for (let i = 1; i < arrayOfStrings.length; i++) {
+        let a = arrayOfStrings[i].toString().length
+        if (a > max) {
+            max = a
+            index = i
+        }
+    }
+    return arrayOfStrings[index]
+} console.log(getLongestString([21, 2, 34,]));
+
+
 
 

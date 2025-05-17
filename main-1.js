@@ -106,7 +106,20 @@ function findMissingNumbers(arr, start, end) {
 }
 // console.log(findMissingNumbers([1, 3, 5], 1, 5)); //[2, 4]
 // console.log(findMissingNumbers([10, 12, 15], 10, 15)); //[11, 13, 14]
+// ---------------------------------------------------------------
+// task 8
+function safeAccess(obj, keyPath) {
+    const first = keyPath.split(".")
+    for (let [key,val] of first) {
+        obj = obj?.[key]
+        if (obj === undefined) {
+            return null
+        }
+    }
+    return obj?? null
+}
 
+console.log(safeAccess({ a: { b: { c: 10 } } }, "a.b.c"));
 
-
-  
+// ---------------------------------------------------------------
+// task 9

@@ -3,14 +3,11 @@ function minutesToHours(minutes) {
     return minutes / 60
 }
 
-export { minutesToHours };
-
 // 2
 function averageOf4Numbers(nr1, nr2, nr3, nr4) {
     return (nr1 + nr2 + nr3 + nr4) / 4
 }
 
-export { averageOf4Numbers };
 
 // 3
 function concat3(string1, string2, string3, separator) {
@@ -112,20 +109,65 @@ function getBiggestNumberInArrays(numbers1, numbers2) {
 
 function getLongestString(arrayOfStrings) {
     if (arrayOfStrings.length == 0) {
-        return []
+        return ""
     }
-    let index
-    let max = arrayOfStrings[0].toString().length
-    for (let i = 1; i < arrayOfStrings.length; i++) {
-        let a = arrayOfStrings[i].toString().length
-        if (a > max) {
-            max = a
-            index = i
+    console.log(arrayOfStrings);
+    let max = arrayOfStrings[0].length;
+    let ind = 0
+    for (let i = 0; i < arrayOfStrings.length; i++) {
+        let len = arrayOfStrings[i].length;
+        if (max < len) {
+            max = len;
+            ind = i;
         }
     }
-    return arrayOfStrings[index]
-} console.log(getLongestString([21, 2, 34,]));
-
-
-
+    return arrayOfStrings[ind]
+}
+// console.log(getLongestString(["Juneau", "Montgomery","Washington, D.C."]));
+// -------------------------------------------------------------------------
+// 13
+function everyNPositions(message, step) {
+    let arr = []
+    for (let i = 0; i < message.length; i += step) {
+        arr.push(message[i])
+    }
+    arr = arr.join("")
+    return arr
+}
+// console.log(everyNPositions("Which framework should I choose?",6));
+// -------------------------------------------------------------------------
+// 14
+function doubleNumbers(numbers) {
+    // if(arr.length==0){
+    //     return []
+    // }
+    let arr = numbers.map(x => x * 2)
+    return arr
+}
+// console.log(doubleNumbers([2,3,4,5,6,7,9]));
+// -------------------------------------------------------------------------
+// 15
+function mostRepetitions(string1, string2, letter) {
+    let obj = {
+        str1 : 0,
+        str2 : 0
+    }
+    for (let i = 0; i < string1.length; i++){
+        if (letter == letter) {
+            obj.str1+=1
+        }
+    }
+    for (let i = 0; i < string2.length; i++) {
+        if (letter == letter) {
+            obj.str2 += 1
+        }
+    }
+    if (obj.str2 > obj.str1) {
+        return string2
+    }
+    return string1
+}
+// console.log(mostRepetitions("Los Angeles", "Texas","a"));
+// -------------------------------------------------------------------------
+// 16
 

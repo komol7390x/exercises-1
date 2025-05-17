@@ -1,3 +1,5 @@
+// https://www.100jsfunctions.com/exercises/getDevelopers
+
 // 1
 function minutesToHours(minutes) {
     return minutes / 60

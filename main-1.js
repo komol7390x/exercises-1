@@ -119,7 +119,33 @@ function safeAccess(obj, keyPath) {
     return obj?? null
 }
 
-console.log(safeAccess({ a: { b: { c: 10 } } }, "a.b.c"));
-
+// console.log(safeAccess({ a: { b: { c: 10 } } }, "a.b.c"));
 // ---------------------------------------------------------------
 // task 9
+
+function removeDuplicates(arr) {
+    let res = []
+    for (let i = 0; i < arr.length; i++){
+        if (!res.includes(arr[i])) {
+            res.push(arr[i])
+        }
+    }
+    return res
+}
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
+// console.log(removeDuplicates([5, 5, 5, 5]));
+// ---------------------------------------------------------------
+// task 10
+function multiplyAndAdd(arr) {
+    let obj = {
+        product: 1,
+        sum:0
+    }
+    for (let i = 0; i < arr.length; i++){
+        obj.product *= arr[i]
+        obj.sum+=arr[i]
+    }
+    return obj
+}
+console.log(multiplyAndAdd([1, 2, 3, 4]));
+console.log(multiplyAndAdd([5, 5, 5]));

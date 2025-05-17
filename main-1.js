@@ -170,4 +170,35 @@ function mostRepetitions(string1, string2, letter) {
 // console.log(mostRepetitions("Los Angeles", "Texas","a"));
 // -------------------------------------------------------------------------
 // 16
+function getMillisecondsBetween(date1, date2) {
+    let d1 = new Date(date1);
+    let d2 = new Date(date2)
+    let a = d1.getTime() - d2.getTime()
+    if (a < 0) {
+        return a * (-1)
+    }
+    return a
+}
+// console.log(getMillisecondsBetween("Wed Mar 02 2005 15:01:15 GMT+0500","Wed Mar 02 2005 15:00:05 GMT+0500"));
+// -------------------------------------------------------------------------
+// 17
+function getMonthOfTheYear(date) {
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    let a=new Date(date)
+    return months[a.getMonth()]
+}
+// console.log(getMonthOfTheYear("2024-12-25T16:15:00.000Z"));
+// -------------------------------------------------------------------------
+// 18
+function addDays(initialDate, daysCount) {
+    let d1 = new Date(initialDate);
+    d1.setDate(d1.getDate()+daysCount);
+    return d1
+}
+console.log(addDays("2023-05-01T10:00:00.000Z",35));
+
+
 

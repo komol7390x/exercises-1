@@ -198,7 +198,18 @@ function addDays(initialDate, daysCount) {
     d1.setDate(d1.getDate()+daysCount);
     return d1
 }
-console.log(addDays("2023-05-01T10:00:00.000Z",35));
+// console.log(addDays("2023-05-01T10:00:00.000Z",35));
+// -------------------------------------------------------------------------
+// 19
+
+function getDevelopers(employees) {
+
+}
+let arr1 = 
+    [{ "name": "Alice", "job": "developer", "age": 28 },
+    { "name": "Bob", "job": "designer", "age": 35 },
+    { "name": "Charlie", "job": "manager", "age": 42 },
+    { "name": "David", "job": "developer", "age": 31 }]
 
 
 

@@ -205,13 +205,36 @@ function addDays(initialDate, daysCount) {
 // 19
 
 function getDevelopers(employees) {
-
+    let arr = [];
+    for (let key of employees) {
+        if (key.job == "developer") {
+            arr.push(key)
+        }
+    }
+    return arr
 }
 let arr1 = 
     [{ "name": "Alice", "job": "developer", "age": 28 },
     { "name": "Bob", "job": "designer", "age": 35 },
     { "name": "Charlie", "job": "manager", "age": 42 },
     { "name": "David", "job": "developer", "age": 31 }]
-
-
-
+// console.log(getDevelopers(arr1));
+// -------------------------------------------------------------------------
+// 20
+function extractElementsBetweenPositions(numbers, n, m) {
+    if (n > m) {
+        return numbers.slice(m,n+1)
+    }
+    return numbers.slice(n,m+1)
+}
+let arr2 = [10, 24, 7, 42, 15, 8, 33, 19, 56, 91, 3, 28, 12, 50, 67]
+// console.log(extractElementsBetweenPositions(arr2,5,2));
+// -------------------------------------------------------------------------
+// 21
+function isSorted(numbers) {
+    if (numbers.length == 0) {
+        return null
+    }else if(numbers[0]<numbers[1])
+}
+console.log(isSorted([19, 10, 23]));
+console.log(isSorted([91, 31, -5]));

@@ -253,5 +253,42 @@ function isSorted(numbers) {
     }
     return true
 }
-console.log(isSorted([19, 10, 23]));
-console.log(isSorted([91, 31, -5]));
+// console.log(isSorted([19, 10, 23]));
+// console.log(isSorted([91, 31, -5]));
+// -------------------------------------------------------------------------
+// 22
+function halfAndHalf(text) {
+    let arr = [];
+    let len = text.length;
+    let midpoint = Math.floor(len / 2);
+    for (let i = 0; i < len; i++) {
+        if (i <= midpoint - 1) {
+            arr.push(text[i].toLowerCase());
+        } else {
+            arr.push(text[i].toUpperCase());
+        }
+    }return arr.join("");
+}
+// console.log(halfAndHalf("Buenos días"));
+// -------------------------------------------------------------------------
+// 23
+function isSameDay(date1, date2) {
+    date1 = new Date(date1);
+    date2 = new Date(date2);
+
+    return (
+        date1.getFullYear() === date2.getFullYear() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getDate() === date2.getDate()
+    );
+}
+// console.log(isSameDay("2007-11-10T10:00:00.000Z", "2008-12-10T11:00:00.000Z"));
+// -------------------------------------------------------------------------
+// 24
+function getMaxMovingDistance(budget, weight, cost) {
+    let movePrice = cost / (10 * 100)
+    let perKm = weight * movePrice;
+    let maxDist = budget / perKm
+    return maxDist
+}
+console.log(getMaxMovingDistance(700,440,50));

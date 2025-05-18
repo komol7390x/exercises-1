@@ -232,9 +232,26 @@ let arr2 = [10, 24, 7, 42, 15, 8, 33, 19, 56, 91, 3, 28, 12, 50, 67]
 // -------------------------------------------------------------------------
 // 21
 function isSorted(numbers) {
-    if (numbers.length == 0) {
-        return null
-    }else if(numbers[0]<numbers[1])
+    let arr = [];
+    for (let i = 0; i < numbers.length; i++){
+        if (!arr.includes(numbers[i])) {
+            arr.push(numbers[i])
+        }
+    }
+    if (arr[0] > arr[1]) {
+        for (let i = 1; i < arr.length; i++){
+            if(arr[i]>arr[i-1]){
+                return false
+            }
+        }
+    } else if (arr[0] < arr[1]) {
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false
+            }
+        }
+    }
+    return true
 }
 console.log(isSorted([19, 10, 23]));
 console.log(isSorted([91, 31, -5]));

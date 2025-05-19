@@ -147,5 +147,5 @@ function multiplyAndAdd(arr) {
     }
     return obj
 }
-console.log(multiplyAndAdd([1, 2, 3, 4]));
-console.log(multiplyAndAdd([5, 5, 5]));
+//console.log(multiplyAndAdd([1, 2, 3, 4]));
+//console.log(multiplyAndAdd([5, 5, 5]));

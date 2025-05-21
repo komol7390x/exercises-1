@@ -203,7 +203,16 @@ function compareSets(setA, setB) {
     let obj = { "onlyB": {a1}, "onlyA": {a2}, "union": {a3} }
     return obj
 }
-console.log(compareSets([1, 2, 3, 4], [3, 4, 5, 6]));
+// console.log(compareSets([1, 2, 3, 4], [3, 4, 5, 6]));
+// ---------------------------------------------------------------------
+// 13
+function groupBirthdays(users, groupBy) {
+
+}
+let obj2 = [{ "birthday": "1993-05-10T10:00:00.000Z", "name": "Lisa" },
+    { "birthday": "1993-08-01T06:00:00.000Z", "name": "Maggy" },
+    { "birthday": "1995-01-10T11:35:00.000Z", "name": "Sam" }
+]
 
 
 

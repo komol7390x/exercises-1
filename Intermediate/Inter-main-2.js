@@ -134,7 +134,80 @@ function removeFirstAndLast(source = "", target) {
     }
     return first.slice(0, lastIndex) + first.slice(lastIndex + target.length);
 }
-console.log(removeFirstAndLast1("I like to code in JavaScript. It's a nice language!", "e "));
+// console.log(removeFirstAndLast1("I like to code in JavaScript. It's a nice language!", "e "));
+// ---------------------------------------------------------------------
+// 8
+function biggestPowerOf2(number) {
+    if (number < 1) return -1;
+    let power = 0;
+    let value = 1;
+    while (value * 2 <= number) {
+        value *= 2;
+        power++;
+    }
+    return power;
+  }
+// console.log(biggestPowerOf2(129));
+// ---------------------------------------------------------------------
+// 9
+
+function areValuesUnique(numbers) {
+    let obj = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (obj.includes(numbers[i])) {
+            return false
+        }
+        obj.push(numbers[i])
+    }
+    return true
+}
+
+// ---------------------------------------------------------------------
+// 10
+function rotateArray(items, n) {
+    if (items.length == 0) {
+        return []
+    }
+    const nextIndex = function () {
+        let last = items[items.length - 1];
+        for (let i = items.length - 1; i > 0; i--) {
+            items[i] = items[i - 1];
+        }
+        items[0] = last;
+    };
+    for (let i = 0; i < n; i++) {
+        nextIndex();
+    }
+    return items;
+}
+// console.log(rotateArray(["Bob", 71, { "name": "JavaScript", "type": "programming_language" }],2));
+// ---------------------------------------------------------------------
+// 11
+function getDaysInMonth(date) {
+    let month = new Date(date)
+    let listMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    let yil=month.getFullYear()
+    if ((yil % 4 === 0) && (yil % 100 !== 0 || yil % 400 === 0)) {
+        return 29
+    }
+    return listMonth[month.getMonth()]
+}
+// console.log((getDaysInMonth("2024-02-15T10:00:00.000Z")));
+// ---------------------------------------------------------------------
+// 12
+function compareSets(setA, setB) {
+    let a1 = setA.filter(x => !(setB.includes(x)))
+    let a2 = setB.filter(x => !(setA.includes(x)))
+    let a3 = new Set([...setA, ...setB])
+    a3=Array.from(a3)
+    let obj = { "onlyB": {a1}, "onlyA": {a2}, "union": {a3} }
+    return obj
+}
+console.log(compareSets([1, 2, 3, 4], [3, 4, 5, 6]));
+
+
+
+
 
 
 

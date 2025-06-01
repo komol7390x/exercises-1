@@ -82,3 +82,22 @@ function longestConsecutive(nums: number[]): number {
 // console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));//8
 // --------------------------------------------------------
 // TASK-4
+class LRUCache {
+  constructor(capacity: number) {
+    // Your code here
+  }
+
+  get(key: number): number {
+    // Your code here
+  }
+
+  put(key: number, value: number): void {
+    // Your code here
+  }
+}
+const cache = new LRUCache(2);
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1); // 1
+cache.put(3, 3); // Removes key 2
+cache.get(2); // -1

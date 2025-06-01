@@ -19,6 +19,8 @@ function validateBrackets(str: string): boolean {
   }
   return arr.length == 0;
 }
-console.log(validateBrackets("()[]{}"));
+// console.log(validateBrackets("()[]{}"));
 // console.log(validateBrackets("([)]"));
 // console.log(validateBrackets("{[]}"));
+// --------------------------------------------------------
+

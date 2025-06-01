@@ -83,21 +83,42 @@ function longestConsecutive(nums: number[]): number {
 // --------------------------------------------------------
 // TASK-4
 class LRUCache {
+    private capacity: number;
+    private cashe: Map<number, number>;
   constructor(capacity: number) {
-    // Your code here
+      this.capacity = capacity;
+      this.cashe=new Map()
   }
 
   get(key: number): number {
-    // Your code here
+      if (!this.cashe.has(key)) {
+        return -1
+      }
+      const value = this.cashe.get(key)!;
+      this.cashe.delete(key);
+      this.cashe.set(key, value);
+      return value
   }
-
   put(key: number, value: number): void {
-    // Your code here
-  }
+      if (this.cashe.has(key)) {
+        this.cashe.delete(key);
+      }
+      this.cashe.set(key, value);
+
+      if (this.cashe.size > this.capacity) {
+          const firstKey: any = this.cashe.keys().next().value;
+                    this.cashe.delete(firstKey)
+      }
+    }
+    print(): void{
+        console.log("Kesh: ",(this.cashe));
+        
+    }
 }
 const cache = new LRUCache(2);
 cache.put(1, 1);
 cache.put(2, 2);
+cache.print()
 cache.get(1); // 1
 cache.put(3, 3); // Removes key 2
 cache.get(2); // -1

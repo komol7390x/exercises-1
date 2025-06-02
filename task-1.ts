@@ -106,7 +106,9 @@ class LRUCache {
       this.cashe.set(key, value);
 
       if (this.cashe.size > this.capacity) {
-          const firstKey: any = this.cashe.keys().next().value;
+          const firstKey: number  = this.cashe.keys().next().value;
+          console.log(firstKey);
+          
                     this.cashe.delete(firstKey)
       }
     }

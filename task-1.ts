@@ -120,7 +120,7 @@
 
 class LRUCache{
   count: number
-  map1:Map<number,number>
+  map1: Map<number, number>;
   constructor(count: number) {
     this.count = count;
     this.map1=new Map()
@@ -144,8 +144,8 @@ class LRUCache{
       this.map1.delete(del)
     }
   }
-  print() {
-    console.log("Kesh: "+this.map1);
+  print():void {
+    console.log("Kesh: "+Array.from(Object.entries(this.map1)));
   }
 }
 const cache = new LRUCache(2);
@@ -155,7 +155,3 @@ cache.print()
 cache.get(1); // 1
 cache.put(3, 3); // Removes key 2
 cache.get(2); // -1
-
-interface Person{
-  [key:string]: string | number
-}

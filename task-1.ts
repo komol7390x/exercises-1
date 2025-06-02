@@ -155,3 +155,7 @@ cache.print()
 cache.get(1); // 1
 cache.put(3, 3); // Removes key 2
 cache.get(2); // -1
+
+interface Person{
+  [key:string]: string | number
+}

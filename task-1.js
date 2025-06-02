@@ -120,7 +120,11 @@ var LRUCache = /** @class */ (function () {
             return -1;
         }
         var val = this.map1.get(num);
+<<<<<<< HEAD
         this.map1["delete"](num);
+=======
+        this.map1.delete(num);
+>>>>>>> 5b10f2b8e9d06924d1caa810842de20b5250cb41
         this.map1.set(num, val);
         return val;
     };
@@ -131,11 +135,19 @@ var LRUCache = /** @class */ (function () {
         this.map1.set(key, value);
         if (this.map1.size > this.count) {
             var del = this.map1.keys().next().value;
+<<<<<<< HEAD
             this.map1["delete"](del);
         }
     };
     LRUCache.prototype.print = function () {
         console.log("Kesh: " + Array.from(Object.entries(this.map1)));
+=======
+            this.map1.delete(del);
+        }
+    };
+    LRUCache.prototype.print = function () {
+        console.log("Kesh: " + this.map1);
+>>>>>>> 5b10f2b8e9d06924d1caa810842de20b5250cb41
     };
     return LRUCache;
 }());

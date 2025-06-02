@@ -5,7 +5,6 @@
 //     "}": "{",
 //     ")": "(",
 //   };
-
 //     for (let key of str) {
 //       console.log(arr);
 //     if (key == "(" || key == "{" || key == "[") {
@@ -27,7 +26,6 @@
 // class ListNode {
 //     value: number;
 //     next: ListNode | null;
-  
 //     constructor(value: number) {
 //       this.value = value;
 //       this.next = null;
@@ -36,7 +34,6 @@
 //   function reverseLinkedList(head: ListNode | null): ListNode | null {
 //     let prev: ListNode | null = null;
 //     let current: ListNode | null = head;
-  
 //     while (current !== null) {
 //       const nextNode: ListNode | null = current.next;
 //       current.next = prev;
@@ -61,10 +58,10 @@
 //   }
 //   console.log("Oldingi tartib:");
 //   printList(node1);
-  // const reversed = reverseLinkedList(node1);
+// const reversed = reverseLinkedList(node1);
 //   console.log("Teskari tartib:");
 //   printList(reversed);
-  // --------------------------------------------------------
+// --------------------------------------------------------
 // TASK-3
 // function longestConsecutive(nums: number[]): number {
 //     let arr:number[]=[]
@@ -89,7 +86,6 @@
 //       this.capacity = capacity;
 //       this.cashe=new Map()
 //   }
-
 //   get(key: number): number {
 //       if (!this.cashe.has(key)) {
 //         return -1
@@ -104,54 +100,49 @@
 //         this.cashe.delete(key);
 //       }
 //       this.cashe.set(key, value);
-
 //       if (this.cashe.size > this.capacity) {
 //           const firstKey: number  = this.cashe.keys().next().value;
 //           console.log(firstKey);
-          
 //                     this.cashe.delete(firstKey)
 //       }
 //     }
 //     print(): void{
 //         console.log("Kesh: ",(this.cashe));
-        
 //     }
 // }
-
-class LRUCache{
-  count: number
-  map1:Map<number,number>
-  constructor(count: number) {
-    this.count = count;
-    this.map1=new Map()
-  }
-  get(num:number) {
-    if (!this.map1.has(num)) {
-      return -1
+var LRUCache = /** @class */ (function () {
+    function LRUCache(count) {
+        this.count = count;
+        this.map1 = new Map();
     }
-    let val:any = this.map1.get(num);
-    this.map1.delete(num);
-    this.map1.set(num, val)
-    return val
-  }
-  put(key:number,value:number) {
-    if (this.map1.has(key)) {
-      this.map1.set(key, value);
-    }
-    this.map1.set(key, value);
-    if (this.map1.size > this.count) {
-      let del:any = this.map1.keys().next().value;
-      this.map1.delete(del)
-    }
-  }
-  print() {
-    console.log("Kesh: "+this.map1);
-  }
-}
-const cache = new LRUCache(2);
+    LRUCache.prototype.get = function (num) {
+        if (!this.map1.has(num)) {
+            return -1;
+        }
+        var val = this.map1.get(num);
+        this.map1.delete(num);
+        this.map1.set(num, val);
+        return val;
+    };
+    LRUCache.prototype.put = function (key, value) {
+        if (this.map1.has(key)) {
+            this.map1.set(key, value);
+        }
+        this.map1.set(key, value);
+        if (this.map1.size > this.count) {
+            var del = this.map1.keys().next().value;
+            this.map1.delete(del);
+        }
+    };
+    LRUCache.prototype.print = function () {
+        console.log("Kesh: " + this.map1);
+    };
+    return LRUCache;
+}());
+var cache = new LRUCache(2);
 cache.put(1, 1);
 cache.put(2, 2);
-cache.print()
+cache.print();
 cache.get(1); // 1
 cache.put(3, 3); // Removes key 2
 cache.get(2); // -1

@@ -123,7 +123,7 @@ cache.get(2); // -1
 // TASK-5 HARD
 class TreeNode {
   value: number;
-  left: number | null;
+  left: number | null| object;
   right: number | null;
   constructor(value:number) {
     this.value = value,

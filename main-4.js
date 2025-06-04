@@ -8,4 +8,4 @@ for (let i = 0; i < test.length; i++){
     arr.push(arr2)
     arr2=[]
 }
-console.log(arr;
+console.log(arr)

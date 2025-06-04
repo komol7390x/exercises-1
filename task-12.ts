@@ -149,3 +149,47 @@ insertIntoBST(root, 15);
 insertIntoBST(root, 8);
 
 // console.log(JSON.stringify(root, null, 2));
+// --------------------------------------------------------
+// TASK-6
+function mergeIntervals(intervals: number[][]): number[][] {
+  if (intervals.length == 0) return [];
+  intervals = intervals.sort((a, b) => a[0] - b[0]);
+  const arr = [];
+  let check=intervals[0]
+  arr.push(intervals[0])
+  for (let i = 1; i < intervals.length; i++) {
+    const next = intervals[i];
+    if (check[1] < next[0]) {
+      arr.push(next);
+      check=next
+    }
+  }
+  return arr
+}
+// console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
+// console.log(mergeIntervals([[1, 4], [4, 5]])) // [[1, 5]]
+// --------------------------------------------------------
+// TASK-7
+function moveIndex(arr: number[]): number[] {
+  let last: number | undefined = arr.pop();
+  for (let i = arr.length-1; i <=0; i--) {
+    arr[i] = arr[i-1];
+  }
+  if (last !== undefined) {
+    arr.unshift(last);
+  }
+  return arr;
+}
+function rotateArray(nums: number[], k: number): number[] {
+  if (nums.length == 0) {
+    return []
+  }
+  for (let i = 0; i < k; i++){
+    nums=moveIndex(nums);
+  }
+  return nums
+}
+console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));// [5, 6, 7, 1, 2, 3, 4]
+console.log(rotateArray([-1, -100, 3, 99], 2));// [3, 99, -1, -100]
+// --------------------------------------------------------
+// TASK-8

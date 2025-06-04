@@ -118,43 +118,34 @@
 //     }
 // }
 
-class LRUCache{
+class LRUCache {
   count: number
-<<<<<<< HEAD
-  map1: Map<number, number>;
-=======
-  map1:Map<number,number>
->>>>>>> 5b10f2b8e9d06924d1caa810842de20b5250cb41
+  map1: Map<number, number>
   constructor(count: number) {
     this.count = count;
-    this.map1=new Map()
+    this.map1 = new Map()
   }
-  get(num:number) {
+  get(num: number) {
     if (!this.map1.has(num)) {
       return -1
     }
-    let val:any = this.map1.get(num);
+    let val: any = this.map1.get(num);
     this.map1.delete(num);
     this.map1.set(num, val)
     return val
   }
-  put(key:number,value:number) {
+  put(key: number, value: number) {
     if (this.map1.has(key)) {
       this.map1.set(key, value);
     }
     this.map1.set(key, value);
     if (this.map1.size > this.count) {
-      let del:any = this.map1.keys().next().value;
+      let del: any = this.map1.keys().next().value;
       this.map1.delete(del)
     }
   }
-<<<<<<< HEAD
-  print():void {
-    console.log("Kesh: "+Array.from(Object.entries(this.map1)));
-=======
-  print() {
-    console.log("Kesh: "+this.map1);
->>>>>>> 5b10f2b8e9d06924d1caa810842de20b5250cb41
+  print(): void {
+    console.log("Kesh: " + Array.from(Object.entries(this.map1)));
   }
 }
 const cache = new LRUCache(2);
@@ -163,12 +154,5 @@ cache.put(2, 2);
 cache.print()
 cache.get(1); // 1
 cache.put(3, 3); // Removes key 2
-<<<<<<< HEAD
-cache.get(2); // -1
-=======
 cache.get(2); // -1
 
-interface Person{
-  [key:string]: string | number
-}
->>>>>>> 5b10f2b8e9d06924d1caa810842de20b5250cb41

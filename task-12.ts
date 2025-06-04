@@ -1,4 +1,4 @@
-// TASK-1
+// TASK-1 easy
 function validateBrackets(str: string): boolean {
   const arr: string[] = [];
   const obj: { [key: string]: string } = {
@@ -65,7 +65,7 @@ class ListNode {
   // console.log("Teskari tartib:");
   // printList(reversed);
   // --------------------------------------------------------
-// TASK-3
+// TASK-3 easy
 function longestConsecutive(nums: number[]): number {
     let arr:number[]=[]
     const max1:number = Math.max(...nums);
@@ -81,6 +81,7 @@ function longestConsecutive(nums: number[]): number {
 // console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));//4
 // console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));//8
 // --------------------------------------------------------
+// TASK-4 easy
 class LRUCache {
   count: number
   object2: Map<number, number>
@@ -150,7 +151,7 @@ insertIntoBST(root, 8);
 
 // console.log(JSON.stringify(root, null, 2));
 // --------------------------------------------------------
-// TASK-6
+// TASK-6 easy
 function mergeIntervals(intervals: number[][]): number[][] {
   if (intervals.length == 0) return [];
   intervals = intervals.sort((a, b) => a[0] - b[0]);
@@ -169,7 +170,7 @@ function mergeIntervals(intervals: number[][]): number[][] {
 // console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
 // console.log(mergeIntervals([[1, 4], [4, 5]])) // [[1, 5]]
 // --------------------------------------------------------
-// TASK-7
+// TASK-7 easy
 function moveIndex(arr: number[]): number[] {
   let last: number | undefined = arr.pop();
   for (let i = arr.length-1; i <=0; i--) {
@@ -189,7 +190,40 @@ function rotateArray(nums: number[], k: number): number[] {
   }
   return nums
 }
-console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));// [5, 6, 7, 1, 2, 3, 4]
-console.log(rotateArray([-1, -100, 3, 99], 2));// [3, 99, -1, -100]
+// console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));// [5, 6, 7, 1, 2, 3, 4]
+// console.log(rotateArray([-1, -100, 3, 99], 2));// [3, 99, -1, -100]
 // --------------------------------------------------------
-// TASK-8
+// TASK-8 easy
+function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+  let arr = nums1.concat(nums2);
+  let len=arr.length
+  let res = arr.reduce((acc, item) => acc += item) / len;
+  console.log(res);
+}
+// findMedianSortedArrays([1, 3], [2]);      // 2.0
+// findMedianSortedArrays([1, 2], [3, 4]);  // 2.5
+// --------------------------------------------------------
+// TASK-9 easy
+class Queue {
+  public res: number;
+  public arr:number[]=[]
+  enqueue(value: number): void {
+    this.arr.push(value)
+  }
+  dequeue(): number | null {
+    if (this.arr.length == 0) {
+      return null
+    }
+    this.res = this.arr.pop()
+    return this.res
+  }
+}
+const que = new Queue();
+que.enqueue(1);
+que.enqueue(2);
+// console.log(que.dequeue());// 1
+// console.log(que.dequeue());// 2
+// --------------------------------------------------------
+// TASK-10
+
+

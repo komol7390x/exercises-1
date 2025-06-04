@@ -1,4 +1,4 @@
-// TASK-1
+// TASK-1 easy
 function validateBrackets(str) {
     var arr = [];
     var obj = {
@@ -63,7 +63,7 @@ var reversed = reverseLinkedList(node1);
 // console.log("Teskari tartib:");
 // printList(reversed);
 // --------------------------------------------------------
-// TASK-3
+// TASK-3 easy
 function longestConsecutive(nums) {
     var arr = [];
     var max1 = Math.max.apply(Math, nums);
@@ -79,6 +79,7 @@ function longestConsecutive(nums) {
 // console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));//4
 // console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));//8
 // --------------------------------------------------------
+// TASK-4 easy
 var LRUCache = /** @class */ (function () {
     function LRUCache(count) {
         this.count = count;
@@ -144,7 +145,7 @@ insertIntoBST(root, 15);
 insertIntoBST(root, 8);
 // console.log(JSON.stringify(root, null, 2));
 // --------------------------------------------------------
-// TASK-6
+// TASK-6 easy
 function mergeIntervals(intervals) {
     if (intervals.length == 0)
         return [];
@@ -164,7 +165,7 @@ function mergeIntervals(intervals) {
 // console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
 // console.log(mergeIntervals([[1, 4], [4, 5]])) // [[1, 5]]
 // --------------------------------------------------------
-// TASK-7
+// TASK-7 easy
 function moveIndex(arr) {
     var last = arr.pop();
     for (var i = arr.length - 1; i <= 0; i--) {
@@ -184,7 +185,40 @@ function rotateArray(nums, k) {
     }
     return nums;
 }
-console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3)); // [5, 6, 7, 1, 2, 3, 4]
-console.log(rotateArray([-1, -100, 3, 99], 2)); // [3, 99, -1, -100]
+// console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));// [5, 6, 7, 1, 2, 3, 4]
+// console.log(rotateArray([-1, -100, 3, 99], 2));// [3, 99, -1, -100]
 // --------------------------------------------------------
-// TASK-8
+// TASK-8 easy
+function findMedianSortedArrays(nums1, nums2) {
+    var arr = nums1.concat(nums2);
+    var len = arr.length;
+    var res = arr.reduce(function (acc, item) { return acc += item; }) / len;
+    console.log(res);
+}
+// findMedianSortedArrays([1, 3], [2]);      // 2.0
+// findMedianSortedArrays([1, 2], [3, 4]);  // 2.5
+// --------------------------------------------------------
+// TASK-9 easy
+var Queue = /** @class */ (function () {
+    function Queue() {
+        this.arr = [];
+    }
+    Queue.prototype.enqueue = function (value) {
+        this.arr.push(value);
+    };
+    Queue.prototype.dequeue = function () {
+        if (this.arr.length == 0) {
+            return null;
+        }
+        this.res = this.arr.pop();
+        return this.res;
+    };
+    return Queue;
+}());
+var que = new Queue();
+que.enqueue(1);
+que.enqueue(2);
+// console.log(que.dequeue());// 1
+// console.log(que.dequeue());// 2
+// --------------------------------------------------------
+// TASK-10

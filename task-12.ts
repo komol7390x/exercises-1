@@ -200,6 +200,7 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   let len=arr.length
   let res = arr.reduce((acc, item) => acc += item) / len;
   console.log(res);
+  return res
 }
 // findMedianSortedArrays([1, 3], [2]);      // 2.0
 // findMedianSortedArrays([1, 2], [3, 4]);  // 2.5

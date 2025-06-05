@@ -168,7 +168,7 @@ function mergeIntervals(intervals: number[][]): number[][] {
   }
   return arr
 }
-console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
+// console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
 // console.log(mergeIntervals([[1, 4], [4, 5]])) // [[1, 5]]
 // --------------------------------------------------------
 // TASK-7 easy
@@ -228,3 +228,11 @@ que.enqueue(2);
 // TASK-10
 
 
+function rotateArray1(nums: number[], k: number): number[] {
+  let res = nums.splice((nums.length-k));
+  nums=res.concat(nums);
+  return nums
+}
+
+rotateArray1([1, 2, 3, 4, 5, 6, 7], 3); // [5, 6, 7, 1, 2, 3, 4]
+rotateArray1([-1, -100, 3, 99], 2);     // [3, 99, -1, -100]
